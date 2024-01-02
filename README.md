@@ -1,16 +1,43 @@
-# Tauri + Vue 3 + TypeScript
+# RecipEasy - A Tauri App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+I created this app after discovering [Tauri](https://tauri.app).  
+A cross platform app, with the backend built using [Rust](https://www.rust-lang.org) and frontend using [Vue](https://vuejs.org) and [TypeScript](https://www.typescriptlang.org).
 
-## Recommended IDE Setup
+## Overview
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+The app allows users to search for recipes by keyword, ingredients, or based on what they have in their pantry.  
+A pantry is just a database of items that the user can add to.
 
-## Type Support For `.vue` Imports in TS
+It displays the recipe results including title, ingredients, instructions, and nutrition information.
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+Users can save recipes, create shopping lists based on recipe ingredients, and view cooking timers.
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+## Usage
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### Building the application
+To speed up building the app, [Just](https://github.com/casey/just) has been used for task running and build automation.
+
+Below are some commands that can be used:
+
+* `just build dev` - Compiles and runs the dev build.
+* `just build prod` - Compiles and runs the production build.
+* `just backend [package]` - Install a package to the backend.
+    * `just backend-dev [package]` - As above, but installs a dev dependency.
+* `just frontend [package]` - Install a package to the frontend.
+    * `just frontend-dev [package]` - As above, but installs a dev dependency.
+
+### Adding additional packages
+
+As this app uses Rust and JavaScript, packages can be added using the respective package manager; this was built with [npm](https://www.npmjs.com) and [cargo](https://doc.rust-lang.org/cargo).
+
+JavaScript packages should be installed using the command line, in the root directory of the project.  
+Rust packages should be added by navigating to the `src-tauri` directory, where you can run `cargo add [package]`.
+
+## Features
+
+- [ ] Search recipes by keyword or ingredients
+- [ ] View recipe details and instructions
+- [ ] Save recipes to view later
+- [ ] Add ingredients to a digital pantry
+- [ ] Create shopping lists from recipe ingredients
+- [ ] Use cooking timers and notifications
