@@ -5,17 +5,23 @@ import "./styles.css";
 */
 import { createRouter, createWebHashHistory } from 'vue-router';
 
-import Home from "./components/routes/Home.vue";
-import Recipe from "./components/routes/Recipe.vue";
+import Home from "./routes/Home.vue";
+import Recipe from "./routes/Recipe.vue";
+import Recipes from "./routes/Recipes.vue";
+import Profile from "./routes/Profile.vue";
 
 const routes = [
-    { path: "/",        name: "home",    component: Home, },
-    { path: "/recipes", name: "recipes", component: Recipe, }
+    { path: "/", name: "home", component: Home, },
+
+    { path: "/recipe/:id", name: "recipe",  component: Recipe, },
+    { path: "/recipes",    name: "recipes", component: Recipes, },
+
+    { path: "/profile", name: "profile", component: Profile, },
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
+    history: createWebHashHistory(),
+    routes,
 })
 
 /* -----------------------------------------------------------------------------

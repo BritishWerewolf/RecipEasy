@@ -1,9 +1,6 @@
 <script setup lang="ts">
-type Ingredient = {
-    "name": string;
-    "quantity": Number;
-    "unit": string;
-};
+import IngredientsChecklist from '../components/IngredientsChecklist.vue';
+import { Ingredient } from '../types';
 
 let ingredients: Ingredient[] = [
     {
@@ -28,16 +25,13 @@ let instructions: string[] = [
 
 <template>
     <div>
-        <h1 class="font-bold">Lie Cake</h1>
+        <h1 class="font-bold">{{ $route.params.id }} Lie Cake</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium eveniet, aut itaque impedit iusto in, vitae rerum omnis qui, odio necessitatibus nemo doloremque harum? Id accusamus aut quo odio quod!</p>
     </div>
 
     <div>
         <h2>Ingredients</h2>
-        <label v-for="ingredient in ingredients" class="block">
-            <input type="checkbox">
-            {{ ingredient.name }} ({{ `${ingredient.quantity} ${ingredient.unit}` }})
-        </label>
+        <IngredientsChecklist :list="ingredients"></IngredientsChecklist>
     </div>
 
     <div class="mt-4">
