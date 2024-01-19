@@ -19,8 +19,9 @@ To speed up building the app, [Just](https://github.com/casey/just) has been use
 
 Below are some commands that can be used:
 
-* `just build dev` - Compiles and runs the dev build.
 * `just build prod` - Compiles and runs the production build.
+* `just build dev` - Compiles and runs the dev build.
+    * `just watch` - An alias for `just build dev`.
 * `just backend [package]` - Install a package to the backend.
     * `just backend-dev [package]` - As above, but installs a dev dependency.
 * `just frontend [package]` - Install a package to the frontend.

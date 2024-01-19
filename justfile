@@ -1,3 +1,4 @@
+# List all possible commands.
 default:
     just --list
 
@@ -6,16 +7,16 @@ default:
 
 [private]
 tauri-prod:
-    cargo tauri
+    cargo tauri build
 
-[private]
-tauri-dev:
+# Watch changes and rebuild.
+watch:
     cargo tauri dev
 
 # target=["dev", "prod"]
 build target:
     just {{ if target == "dev" { \
-        "tauri-dev"              \
+        "watch"                  \
     } else if target == "prod" { \
         "tauri-prod"             \
     } else {                     \
