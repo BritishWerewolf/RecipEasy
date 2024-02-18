@@ -1,8 +1,8 @@
 [package]
-name = "tauri-test"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "RecipEasy"
+version = "0.1.0"
+description = "A simple app for Foodies."
+authors = ["BritishWerewolf"]
 license = ""
 repository = ""
 edition = "2021"
