@@ -13,6 +13,9 @@ dist-ssr
 target
 *.local
 
+# Surreal DB
+*.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
